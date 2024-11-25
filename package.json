@@ -1,0 +1,26 @@
+{
+  "name": "shutdownapp",
+  "version": "1.0.0",
+  "description": "an app that kills your pc for good after your given time to live",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanmayShukla486/KillOS.git"
+  },
+  "keywords": [
+    "KillOS"
+  ],
+  "author": "Tanmay Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TanmayShukla486/KillOS/issues"
+  },
+  "homepage": "https://github.com/TanmayShukla486/KillOS#readme",
+  "dependencies": {
+    "electron": "^33.2.0"
+  }
+}

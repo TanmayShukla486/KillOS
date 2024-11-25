@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KillOS</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="index.css"
+    />
+  </head>
+
+  <body>
+    <input
+      type="number"
+      placeholder="Enter the number of minutes"
+      min="0"
+      max="3600"
+      id="delay"
+    />
+    <button onclick="scheduleShutdown()">Schedule Shutdown</button>
+    <button onclick="cancelShutdown()">Cancel Shutdown</button>
+
+    <script>
+      const { ipcRenderer } = require('electron');
+      function scheduleShutdown() {
+        const delay = document.getElementById('delay').value;
+        ipcRenderer.send('scheduleShutdown', parseInt(delay));
+      }
+      function cancelShutdown() {
+        ipcRenderer.send('cancelShutdown');
+      }
+      ipcRenderer.on('success', (event, message) => alert(message));
+      ipcRenderer.on('error', (event, message) => alert(message));
+    </script>
+  </body>
+</html>
